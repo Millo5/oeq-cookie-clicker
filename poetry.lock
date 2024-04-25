@@ -23,6 +23,20 @@ files = [
 ]
 
 [[package]]
+name = "pyserial"
+version = "3.5"
+description = "Python Serial Port Extension"
+optional = false
+python-versions = "*"
+files = [
+    {file = "pyserial-3.5-py2.py3-none-any.whl", hash = "sha256:c4451db6ba391ca6ca299fb3ec7bae67a5c55dde170964c7a14ceefec02f2cf0"},
+    {file = "pyserial-3.5.tar.gz", hash = "sha256:3c77e014170dfffbd816e6ffc205e9842efb10be9f58ec16d3e8675b4925cddb"},
+]
+
+[package.extras]
+cp2110 = ["hidapi"]
+
+[[package]]
 name = "pyyaml"
 version = "6.0.1"
 description = "YAML parser and emitter for Python"
@@ -101,4 +115,4 @@ pyyaml = ">=3.13"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "d970383a30aeadadb8446e23b84a3a85e3443566329daf7d0e93c36b5d5e09cd"
+content-hash = "7cc38fbe3c5519404c46e383f453a10b1bac00e887191953a8d1458bd14db685"
