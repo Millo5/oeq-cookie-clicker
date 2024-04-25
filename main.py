@@ -31,12 +31,12 @@ class Example:
         # run a GUI, do a full-screen blessed virtualization, or just about anything else.
         while self.connection:
             # print("Do awesome stuff here! Total pulses:", self.pulses)
-            INFO_STORAGE = open("WaterRowerDataPython.txt", 'w')
+            info_storage = open("WaterRowerDataPython.txt", 'w')
             self.delta = lerp(self.delta, self.pulses, 0.5)
             print()
             file_content = "delta:" + str(round(self.delta))
-            INFO_STORAGE.write(file_content + "\n")
-            INFO_STORAGE.close()
+            info_storage.write(file_content + "\n")
+            info_storage.close()
             print(" "*round(self.delta)+"-")
             self.pulses = 0
             self.connection.requestStatistic("total_distance_m")
