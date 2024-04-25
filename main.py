@@ -34,7 +34,7 @@ class Example:
             INFO_STORAGE = open("WaterRowerDataPython.txt", 'w')
             self.delta = lerp(self.delta, self.pulses, 0.5)
             print()
-            file_content = "Delta: " + str(round(self.delta))
+            file_content = "delta:" + str(round(self.delta))
             INFO_STORAGE.write(file_content + "\n")
             INFO_STORAGE.close()
             print(" "*round(self.delta)+"-")
