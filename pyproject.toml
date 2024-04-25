@@ -7,7 +7,6 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-serial = "^0.0.97"
 pyserial = "^3.5"
 
 

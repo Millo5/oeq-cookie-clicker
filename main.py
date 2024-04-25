@@ -4,6 +4,7 @@ import serial.tools.list_ports
 
 from WaterRowerConnection import WaterRowerConnection
 
+INFO_STORAGE = open("WaterRowerDataPython.txt", 'w')
 
 def lerp(start, end, t):
     return start * (1 - t) + end * t
@@ -28,6 +29,8 @@ class Example:
         while self.connection:
             # print("Do awesome stuff here! Total pulses:", self.pulses)
             self.delta = lerp(self.delta, self.pulses, 0.5)
+            file_content = "Delta: " + str(self.delta)
+            INFO_STORAGE.write(file_content + "\n")
             print(" "*round(self.delta)+"-")
             self.pulses = 0
             self.connection.requestStatistic("total_distance_m")
