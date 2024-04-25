@@ -29,7 +29,8 @@ class Example:
         while self.connection:
             # print("Do awesome stuff here! Total pulses:", self.pulses)
             self.delta = lerp(self.delta, self.pulses, 0.5)
-            file_content = "Delta: " + str(self.delta)
+            print()
+            file_content = "Delta: " + str(round(self.delta))
             INFO_STORAGE.write(file_content + "\n")
             print(" "*round(self.delta)+"-")
             self.pulses = 0
