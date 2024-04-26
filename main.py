@@ -4,11 +4,6 @@ import serial.tools.list_ports
 
 from WaterRowerConnection import WaterRowerConnection
 
-# File Write Prio
-# Strokes pm
-# Time
-# Distance
-
 info_dict = {}
 
 def lerp(start, end, t):
@@ -33,17 +28,16 @@ class Example:
         # This is where you run your main application. For instance, you could start a Flask app here,
         # run a GUI, do a full-screen blessed virtualization, or just about anything else.
         while self.connection:
-            # print("Do awesome stuff here! Total pulses:", self.pulses)
-
-            info_storage = open("WaterRowerDataPython.txt", 'w')
             self.delta = lerp(self.delta, self.pulses, 0.5)
             print()
             file_content = "delta:" + str(round(self.delta))
             for k, v in info_dict.items():
                 file_content += "\n" + str(k) + ":" + str(v)
 
-            info_storage.write(file_content + "\n")
-            info_storage.close()
+            
+            with open("WaterRowerDataPython.txt", 'w') as info_storage:
+                info_storage.write(file_content)
+
             print(" "*round(self.delta)+"-")
             self.pulses = 0
             self.connection.requestStatistic("total_distance_m")
