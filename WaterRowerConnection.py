@@ -5,7 +5,7 @@ import serial
 
 # Adaptation of https://github.com/inonoob/pirowflo/blob/master/src/adapters/s4/waterrowerinterface.py
 
-MEMORY_MAP = {'055': {'type': 'total_distance_m', 'size': 'double', 'base': 16},
+MEMORY_MAP = {'057': {'type': 'total_distance_m', 'size': 'double', 'base': 16},
               '140': {'type': 'total_strokes', 'size': 'double', 'base': 16},
               '088': {'type': 'watts', 'size': 'double', 'base': 16},
               '08A': {'type': 'total_kcal', 'size': 'triple', 'base': 16},
